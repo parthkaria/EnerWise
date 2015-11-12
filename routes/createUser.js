@@ -3,15 +3,11 @@
  */
 var express = require('express');
 var router = express.Router();
+var createUserCtrl = require('../controller/createUserCtrl');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    console.log("inside create user");
-    //console.log(req);
-});
-/* GET users listing. */
+/* Post user Object */
 router.post('/', function(req, res, next) {
     console.log("inside post create user");
-    //console.log(req);
+    createUserCtrl.saveUser(req.body.user);
 });
 module.exports = router;
