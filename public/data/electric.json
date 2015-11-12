@@ -1,0 +1,66 @@
+{
+    "electric": [
+        {
+            "text": "Option 1",
+            "value": "1"
+        },
+        {
+            "text": "Option 2",
+            "value": "2"
+        },
+        {
+            "text": "Option 3",
+            "value": "3"
+        },
+        {
+            "text": "Option 4",
+            "value": "4"
+        }
+    ],
+    "state": [
+        {
+            "text": "State 1",
+            "value": "1"
+        },
+        {
+            "text": "State 2",
+            "value": "2"
+        },
+        {
+            "text": "State 3",
+            "value": "3"
+        },
+        {
+            "text": "State 4",
+            "value": "4"
+        }
+    ],
+    "houseslist": [
+        {
+            "text": "314 pi st, Oakland, CA 94612 (Primary)",
+            "value": "1"
+        },
+        {
+            "text": "1123 Fibonacci Dr, Berkeley, CA 94611",
+            "value": "2"
+        },
+        {
+            "text": "1111 Lorem Ipsum Dolor, Mountain View, CA 12345" ,
+            "value": "3"
+        }
+    ],
+    "chartData": [
+        [ "JAN", 581, 896],
+        [ "FEB", 148, 200],
+        [ "MAR", 165, 800],
+        [ "APR", 990, 940],
+        [ "MAY", 990, 940],
+        [ "JUN", 990, 940],
+        [ "JUL", 990, 940],
+        [ "AUG", 450, 430],
+        [ "SEP", 450, 430],
+        [ "OCT", 450, 430],
+        [ "NOV", 450, 430],
+        [ "DEC", 450, 430]
+    ]
+}

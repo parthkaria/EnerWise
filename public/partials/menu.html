@@ -1,0 +1,13 @@
+<a class="logo" href="#landing">
+    <img src="i/menu-logo.jpg" alt="Logo">
+</a>
+<nav>
+    <ul>
+        <li data-ng-if="page !== 'inner'"><a data-ng-click="closeMenu()" data-ng-class="{'active': page === 'home'}" href="#Home">Home</a></li>
+        <li data-ng-if="page !== 'inner'"><a data-ng-click="closeMenu()" data-ng-class="{'active': page === 'signup'}" href="#signup/owner">Create Account</a></li>
+        <li data-ng-if="page !== 'inner'"><a data-ng-click="closeMenu()" data-ng-class="{'active': page === 'signin'}" href="#signin">Sign In</a></li>
+        <li data-ng-if="page !== 'inner'"><a data-ng-click="closeMenu()" data-ng-class="{'active': page === 'reset'}" href="#reset">Forgot Password</a></li>
+        <li data-ng-if="page === 'inner'">Welcome <span>John Smith</span></li>
+        <li data-ng-if="page === 'inner'"><a data-ng-click="closeMenu()" href="#signin">Sign Out</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,38 @@
+<!-- header -->
+<header data-ng-include="'partials/header.html'"></header>
+
+<!-- account-content -->
+<div class="clearfix account-content">
+    <!-- center-div -->
+    <div class="center-div sign-in-form">
+        <div class="inner">
+            <h1 class="desktop">Sign In</h1>
+            <h1 class="mobile">Sign In to Your Account</h1>
+
+            <div class="social-connect clearfix">
+                <a href="javascript:;" class="icon facebook-icon"></a>
+                <a href="javascript:;" class="icon twitter-icon"></a>
+                <a href="javascript:;" class="icon google-icon"></a>
+            </div>
+            <hr/>
+            <div class="or">OR</div>
+            <!--signup-form-->
+            <div class="signin-form clearfix">
+                <p class="sign-text">Sign into your account to do stuﬀ</p>
+                <input type="email" placeholder="Email" data-ng-model="user.email" class="email sign-input"/>
+                <input type="password" placeholder="Password" data-ng-model="user.password" class="password sign-input"/>
+                <div data-ng-if="user.password" class="password-strength">
+                    <div class="bar" ng-repeat="item in strength track by $index" data-ng-class="{active : item === 1}"></div>
+                </div>
+                <a href="javascript:;" data-ng-click="signIn()" class="button">SIGN IN</a>
+                <p class="text-center">Forgot your password? <a href="#reset">Click here</a> to reset it</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- message-popup -->
+<div data-ng-include="'partials/message-popup.html'"></div>
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>

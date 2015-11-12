@@ -1,0 +1,26 @@
+<!-- header -->
+<header data-ng-include="'partials/header.html'"></header>
+
+<!-- account-content -->
+<div class="clearfix account-content reset-page">
+    <!-- center-div -->
+    <div class="center-div">
+        <div class="inner">
+            <h1 class="forgot-title">Forgot Password</h1>
+            <!--signup-form-->
+            <div class="signin-form reset-form clearfix">
+                <p>Enter your email to retrieved password</p>
+                <input type="email" placeholder="Email" data-ng-model="user.email" class="email"/>
+
+                <a href="javascript:;" data-ng-click="resetPassword()" class="button reset-btn">RESET PASSWORD</a>
+                <p class="text-center mobile">Back to <a href="#signin">Sign In</a> to your account</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- message-popup -->
+<div data-ng-include="'partials/message-popup.html'"></div>
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>

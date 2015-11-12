@@ -1,0 +1,38 @@
+<div class="customer-popup" data-ng-if="customerModal && message.show === false">
+    <div class="inner">
+        <h1>{{customerModalTitle}} Customer
+            <a href="javascript:;" data-ng-click="closeModal()" class="close-icon icon"></a>
+        </h1>
+
+        <div class="your-info">
+            <div class="clearfix">
+                <div class="item name">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" data-ng-model="popup.firstname"/>
+                </div>
+                <div class="item name last">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last Name" data-ng-model="popup.lastname"/>
+                </div>
+                <div class="item email">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your Email address" data-ng-model="popup.email"/>
+                </div>
+                <div class="item company">
+                    <label>Primary Address</label>
+                    <input type="text" placeholder="Your primary Address" data-ng-model="popup.address"/>
+                </div>
+                <div class="item house-of-interest clearfix">
+                    <label>House of Interest</label>
+                    <input placeholder="Your house of interest address" data-ng-repeat="house in popup.houses track by $index" type="text" data-ng-model="house.address"/>
+                </div>
+            </div>
+            <div class="clearfix">
+                <a href="javascript:;" data-ng-click="addPopupHouse()" class="view">Add House</a>
+            </div>
+            <div class="clearfix">
+                <a href="javascript:;" data-ng-click="addEditCustomer()" class="button update-button">UPDATE INFORMATION</a>
+            </div>
+        </div>
+    </div>
+</div>

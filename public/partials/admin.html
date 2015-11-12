@@ -1,0 +1,99 @@
+<!-- header -->
+<header data-ng-include="'partials/header-login.html'"></header>
+
+<!-- inner-content-->
+<div class="inner-content">
+    <h1 class="title">Pending House Reports</h1>
+    <!-- admin-panel -->
+    <div class="admin-panel">
+        <div class="header">
+            MONTHLY SOLAR PRODUCTION (kWh)
+        </div>
+        <div data-ng-repeat="item in items" class="item-row clearfix" data-ng-class="{even: $even, odd: $odd}">
+            <div class="img-upload">
+                <img src="i/placeholder-img.jpg" alt="Upload" data-ng-click="attachFiles($event)"/>
+                <a href="javascript:;" data-ng-click="attachFiles($event)">Upload Photo</a>
+                <input accept="image/*" onchange="angular.element(this).scope().fileChange(event)" type="file" class="hidden flie-input"/>
+            </div>
+            <div class="center-wrapper">
+                <div class="location">
+                    <i class="icon location-icon"></i> <span>{{item.location}}</span>
+                </div>
+                <div class="months">
+                    <div class="box">
+                        <h1>Jan</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.january"/>
+                    </div>
+                    <div class="box">
+                        <h1>Feb</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.february"/>
+                    </div>
+                    <div class="box">
+                        <h1>Mar</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.march"/>
+                    </div>
+                    <div class="box">
+                        <h1>Apr</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.april"/>
+                    </div>
+                    <div class="box">
+                        <h1>May</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.may"/>
+                    </div>
+                    <div class="box">
+                        <h1>Jun</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.june"/>
+                    </div>
+                    <div class="box">
+                        <h1>Jul</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.july"/>
+                    </div>
+                    <div class="box">
+                        <h1>Aug</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.august"/>
+                    </div>
+                    <div class="box">
+                        <h1>Sep</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.september"/>
+                    </div>
+                    <div class="box">
+                        <h1>Oct</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.october"/>
+                    </div>
+                    <div class="box">
+                        <h1>Nov</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.november"/>
+                    </div>
+                    <div class="box">
+                        <h1>Dec</h1>
+                        <input data-only-digits="" type="text" data-ng-model="item.december"/>
+                    </div>
+                </div>
+            </div>
+            <div class="rate-wrapper">
+
+                <div class="box rate">
+                    <h1>Sell Rate</h1>
+                    <input data-only-digits="" data-mask-currency="" type="text" data-ng-model="item.rate"/>
+                </div>
+
+                <div class="box total">
+                    <h1>System Cost</h1>
+                    <input data-only-digits="" data-mask-currency="" type="text" data-ng-model="item.total"/>
+                </div>
+            </div>
+            <div class="done-wrapper">
+                <a href="javascript:;" data-ng-click="done($index)">
+                    <i class="icon done-icon"></i>
+                    Done
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- message-popup -->
+<div data-ng-include="'partials/message-popup.html'"></div>
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>

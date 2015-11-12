@@ -1,0 +1,239 @@
+<!-- header -->
+<header data-ng-include="'partials/header-login.html'"></header>
+
+
+<!-- tabs -->
+<div class="tabs">
+    <ul>
+        <li><a data-ng-click="tab ='info'" data-ng-class="{active : tab === 'info'}" href="javascript:;">Your Info</a></li>
+        <li class="customer-tab"><a data-ng-click="tab ='customers'" data-ng-class="{active : tab === 'customers'}" href="javascript:;">Customers</a></li>
+        <li><a data-ng-click="tab ='analysis'" data-ng-class="{active : tab === 'analysis'}" href="javascript:;">Home Analysis</a></li>
+    </ul>
+</div>
+<!--inner-item-content-->
+<div data-ng-if="tab === 'info'" class="inner-item-content">
+    <div class="your-info">
+        <h3>Your Account Information</h3>
+
+        <div class="clearfix">
+            <div class="item name">
+                <label>First Name</label>
+                <input type="text" data-ng-model="your.firstname"/>
+            </div>
+            <div class="item name last">
+                <label>Last Name</label>
+                <input type="text" data-ng-model="your.lastname"/>
+            </div>
+            <div class="item company">
+                <label>Company</label>
+                <input type="text" data-ng-model="your.company"/>
+            </div>
+            <div class="item email">
+                <label>Email</label>
+                <input type="email" data-ng-model="your.email"/>
+            </div>
+            <div class="item password last">
+                <label>Password</label>
+                <input type="password" data-ng-model="your.password"/>
+            </div>
+        </div>
+        <div class="clearfix">
+            <a href="javascript:;" data-ng-click="updateInformation()" class="button">UPDATE INFORMATION</a>
+        </div>
+    </div>
+</div>
+
+<!--inner-item-content-->
+<div data-ng-if="tab === 'customers'" class="inner-item-content">
+    <h1 class="title">Customers</h1>
+    <a href="javascript:;" data-ng-click="addCustomer()" class="button add-customer">Add New Customer</a>
+
+    <table class="customer-table">
+        <tr>
+            <th class="customer">CUSTOMERS</th>
+            <th class="address">HOME ADDRESS</th>
+            <th class="status">STATUS</th>
+            <th class="house">HOUSE OF INTEREST</th>
+            <th class="house-status">STATUS</th>
+            <th class="action">&nbsp;</th>
+        </tr>
+        <tr data-ng-repeat="customer in customers" data-ng-init="parentIindex = $index">
+            <td>
+                <div class="mobile">
+                    <h5>CUSTOMERS</h5>
+                </div>
+                <a href="javascript:;" data-ng-click="editItem($index)">{{customer.name}}</a>
+
+                <div class="mobile clearfix">
+                    <h5>HOME ADDRESS</h5>
+                    {{customer.address}}
+                    <a href="javascript:;" data-ng-click="viewAnalysis()" class="button view">VIEW ANALYSIS</a>
+                    <h5>STATUS</h5>
+
+                    <p>{{customer.status}}</p>
+                    <h5>HOUSE OF INTEREST</h5>
+
+                    <div data-ng-repeat="house in customer.houses" class="house-item clearfix">
+                        <p><i data-ng-if="house.primary" class="icon icon-primary"></i>{{house.address}}</p>
+                        <a href="javascript:;" data-ng-click="viewAnalysis()" class="button view">VIEW ANALYSIS</a>
+                        <a data-ng-if="!house.primary" href="javascript:;" data-ng-click="setPrimary(parentIindex, $index)" class="button view">SET
+                            PRIMARY</a>
+
+                        <p>House Status : {{house.status}}</p>
+                    </div>
+                    <a href="javascript:;" data-ng-click="editItem($index)" class="icon edit-icon"></a>
+                    <a href="javascript:;" data-ng-click="deleteItem($index)" class="icon delete-icon"></a>
+                </div>
+
+            </td>
+            <td>{{customer.address}}
+                <a href="javascript:;" data-ng-click="viewAnalysis()" class="button view">VIEW ANALYSIS</a>
+
+            </td>
+            <td>{{customer.status}}</td>
+            <td>
+                <div data-ng-repeat="house in customer.houses" class="house-item clearfix">
+                    <p><i data-ng-if="house.primary" class="icon icon-primary"></i>{{house.address}}</p>
+                    <a href="javascript:;" data-ng-click="viewAnalysis()" class="button view">VIEW ANALYSIS</a>
+                    <a data-ng-if="!house.primary" href="javascript:;" data-ng-click="setPrimary(parentIindex, $index)" class="button view">SET
+                        PRIMARY</a>
+                </div>
+            </td>
+            <td>
+
+                <div data-ng-repeat="house in customer.houses" class="house-item clearfix">
+                    {{house.status}}
+                </div>
+            </td>
+            <td>
+                <a href="javascript:;" data-ng-click="editItem($index)" class="icon edit-icon"></a>
+                <a href="javascript:;" data-ng-click="deleteItem($index)" class="icon delete-icon"></a>
+            </td>
+        </tr>
+    </table>
+
+    <!-- customer-popup.html -->
+    <div data-ng-include="'partials/customer-popup.html'"></div>
+</div>
+
+<!--inner-item-content-->
+<div data-ng-if="tab === 'analysis'" class="inner-item-content">
+
+    <h1 data-ng-if="tab ==='analysis'" class="title name-title">Isaac Newton</h1>
+    <!-- analysis-top -->
+    <div data-ng-include="'partials/analysis-top.html'"></div>
+
+</div>
+<div data-ng-if="tab === 'analysis'" class="analysis-bottom clearfix">
+    <h3>Financing</h3>
+
+    <div class="finance-box">
+        <div class="item clearfix">
+            <p class="pull-left">Estimated system installation cost</p>
+            <strong class="pull-right">{{finance.cost}}</strong>
+        </div>
+        <div class="double-item item clearfix">
+            <div class="left">
+                <p>Available
+                    Incentives</p>
+            </div>
+            <div class="right">
+                <div class="item clearfix">
+                    <p class="pull-left">Federal Tax Credit</p>
+                    <strong class="pull-right">{{finance.federal}}</strong>
+                </div>
+                <div class="item clearfix">
+                    <p class="pull-left">State Tax Credit</p>
+                    <strong class="pull-right">{{finance.state}}</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="item clearfix">
+            <p class="pull-left blue">Estimated cost after incentives</p>
+            <strong class="pull-right blue">{{finance.estimate}}</strong>
+        </div>
+    </div>
+
+    <div class="finance-input clearfix">
+        <div>
+            <label>Interest Rate #1</label>
+            <rzslider
+                    rz-slider-model="finance.interest1"
+                    rz-slider-floor="0"
+                    rz-slider-show-ticks-value="false"
+                    rz-slider-ceil="10"></rzslider>
+        </div>
+        <div>
+            <label>Loan Terms</label>
+            <rzslider
+                    rz-slider-model="finance.loanterm1"
+                    rz-slider-floor="0"
+                    rz-slider-show-ticks-value="false"
+                    rz-slider-ceil="100"></rzslider>
+        </div>
+        <div>
+            <label>% saving applied to loan</label>
+            <rzslider
+                    rz-slider-model="finance.saving1"
+                    rz-slider-floor="0"
+                    rz-slider-show-ticks-value="false"
+                    rz-slider-ceil="100"></rzslider>
+        </div>
+        <div>
+            <label>Interest Rate #2</label>
+            <rzslider
+                    rz-slider-model="finance.interest2"
+                    rz-slider-floor="0"
+                    rz-slider-show-ticks-value="false"
+                    rz-slider-ceil="10"></rzslider>
+        </div>
+        <div>
+            <label>Loan Terms</label>
+            <rzslider
+                    rz-slider-model="finance.loanterm2"
+                    rz-slider-floor="0"
+                    rz-slider-show-ticks-value="false"
+                    rz-slider-ceil="100"></rzslider>
+        </div>
+        <div>
+            <label>% saving applied to loan</label>
+            <rzslider
+                    rz-slider-model="finance.saving2"
+                    rz-slider-floor="0"
+                    rz-slider-show-ticks-value="false"
+                    rz-slider-ceil="100"></rzslider>
+        </div>
+    </div>
+    <div class="clearfix">
+        <h3>Potential Payback of Loan</h3>
+    </div>
+    <div class="line-chart chart-wrapper"  data-chart='lineChart' data-line-chart=""></div>
+    <table class="finance-table">
+        <tr>
+            <th>Scenario</th>
+            <th>Duration</th>
+            <th>25 year value <br/>
+                of installation
+            </th>
+        </tr>
+        <tr>
+            <td><p>Scenario 1 Time to Pay Back</p></td>
+            <td>22 Months</td>
+            <td class="text-right">$45,100</td>
+        </tr>
+        <tr>
+            <td><p>Scenario 2 Time to Pay Back</p></td>
+            <td>17 Months</td>
+            <td class="text-right">$52,345</td>
+        </tr>
+    </table>
+
+    <a href="javascript:;" class="button" data-ng-click="exportPDF()"><i class="icon"></i> EXPORT TO PDF</a>
+
+</div>
+<!-- message-popup -->
+<div data-ng-include="'partials/message-popup.html'"></div>
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>

@@ -1,0 +1,995 @@
+@media only screen and (max-width: 1023px) {
+  .icon {
+    background-size: 500px 300px; }
+  
+  body.open {
+      position: fixed;
+      overflow: hidden;
+  }  
+
+  .menu-overlay.open {
+      position: fixed;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      top: 0;
+      left: 0;
+  }
+
+  footer {
+    height: 347px; }
+    footer .inner {
+      padding: 40px 40px; }
+      footer .inner .url-section {
+        width: 100%;
+        float: none;
+        clear: both; }
+        footer .inner .url-section .section {
+          width: 50%;
+          float: left;
+          text-align: left; }
+      footer .inner .section {
+          width: 141px;
+          float: none;
+          margin: 0 auto}
+        footer .inner .section.social-section, footer .inner .section.logo-section {
+          text-align: center; }
+        footer .inner .section.logo-section a:first-child {
+          margin-left: 0; }
+        footer .inner .section .icon {
+          background: url(../i/mobile-footer.png) no-repeat;
+            background-size: 123px 41px;
+          height: 41px;
+          width: 41px;
+          display: inline-block;
+          margin-left: 6px;
+          margin-bottom: 30px;
+          margin-top: 0; }
+          footer .inner .section .icon.facebook-icon {
+            background-position: 0 0; }
+          footer .inner .section .icon.twitter-icon {
+            background-position: -41px 0; }
+          footer .inner .section .icon.google-icon {
+            background-position: -82px 0; }
+        footer .inner .section h3 {
+          font-size: 12px;
+          color: #909090;
+          margin: 0 auto;
+          text-align: left;
+          width: 200px;
+          display: block;
+          padding: 10px 0 5px 0; }
+        footer .inner .section p {
+          font-size: 12px;
+          color: #909090;
+          margin: 0 auto;
+          text-align: left;
+          width: 200px;
+          padding: 0; }
+    footer .inner .section p:last-child{
+        font-size: 11px;
+    }
+        footer .inner .section img {
+          width: 125px;
+          height: 25px;
+          margin-top: 35px; }
+        footer .inner .section nav {
+          padding-left: 0; }
+          footer .inner .section nav ul li a {
+            font-size: 13px; }
+
+  /* landing */
+  body.landing .main-logo-wrapper {
+    padding: 20px 0 30px 0; }
+    body.landing .main-logo-wrapper .main-logo {
+      width: 220px;
+      height: 68px;
+      background-position: 0 -152px;
+      float: none;
+      margin: 0 auto; }
+  body.landing .sections {
+    padding: 0 57px 0 57px; }
+    body.landing .sections .section {
+      height: 155px;
+      margin-right: 14px;
+      margin-bottom: 10px;
+      width: calc((100% - 14px) / 2); }
+      body.landing .sections .section i {
+        height: 76px;
+        width: 76px;
+        margin: 15px auto 15px auto; }
+        body.landing .sections .section i.owner-icon {
+          background-position: 0 0; }
+        body.landing .sections .section i.financier-icon {
+          background-position: -76px 0; }
+        body.landing .sections .section i.realtor-icon {
+          background-position: 0 -76px; }
+        body.landing .sections .section i.energy-icon {
+          background-position: -76px -76px; }
+      body.landing .sections .section p {
+        font-size: 7.5px;
+        padding: 0 0 5px 0;
+        margin: 0; }
+      body.landing .sections .section h3 {
+        font-size: 9px;
+        line-height: 12px;
+        color: #278DC5; }
+      body.landing .sections .section a {
+        height: 25px;
+        font-size: 6.5px;
+        line-height: 25px; }
+      body.landing .sections .section:nth-child(2), body.landing .sections .section:nth-child(4) {
+        margin-right: 0; }
+      body.landing .sections .section.active h3 {
+        color: #666; }
+      body.landing .sections .section.active i.owner-icon {
+        background-position: -152px 0; }
+      body.landing .sections .section.active i.financier-icon {
+        background-position: -228px 0; }
+      body.landing .sections .section.active i.realtor-icon {
+        background-position: -152px -76px; }
+      body.landing .sections .section.active i.energy-icon {
+        background-position: -228px -76px; }
+    body.landing header .inner a.menu-icon {
+        display: block;
+        background-position: -270px -160px;
+    }
+  /* Header */
+  header {
+    height: 45px; }
+    header .inner {
+      padding: 0 10px; }
+      header .inner a.menu-icon {
+        display: block;
+        background-position: -240px -160px;
+        width: 23px;
+        height: 23px;
+        float: left;
+        margin-left: 5px;
+        margin-top: 10px; }
+      header .inner a.logo {
+        width: 84px;
+        height: 15px;
+        float: none;
+        display: block;
+        margin: 10px auto 0 auto; }
+        header .inner a.logo img {
+          width: 84px;
+          height: 15px; }
+      header .inner a.button {
+        height: 30px;
+        width: 68px;
+        line-height: 28px;
+        margin-top: 7px;
+        font-size: 9px; }
+      header .inner .profile {
+        display: none; }
+
+  .account-content {
+    height: auto;
+    padding: 8px 10px;
+    width: 100%; }
+    .account-content.reset-page .center-div {
+      height: 442px; }
+    .account-content .center-div {
+      background: #ffffff;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 0 auto; }
+      .account-content .center-div .inner {
+        padding: 30px 45px; }
+        .account-content .center-div .inner h1 {
+          font-size: 20px;
+          line-height: 20px;
+          margin-top: 7px;
+          margin-bottom: 37px; }
+        .account-content .center-div .inner h1.forgot-title {
+          margin-top: 7px;
+          margin-bottom: 33px; }
+        .account-content .center-div .inner h1.signup-title {
+          margin-bottom: 28px; }
+        .account-content .center-div .inner h3 {
+          font-size: 13px;
+          line-height: 16px;
+          margin-top: 0;
+          margin-bottom: 15px;
+          padding-left: 0px; }
+        .account-content .center-div .inner .types .type {
+          cursor: pointer;
+          width: 25%;
+          float: left; }
+          .account-content .center-div .inner .types .type i {
+            width: 51px;
+            height: 51px;
+            background: url(../i/mobile-badges.png) no-repeat;
+            background-size: 204px 102px;
+            margin: 0 auto;
+            display: block; }
+            .account-content .center-div .inner .types .type i.owner-icon {
+              background-position: 0px 0; }
+            .account-content .center-div .inner .types .type i.financier-icon {
+              background-position: -51px 0; }
+            .account-content .center-div .inner .types .type i.realtor-icon {
+              background-position: -102px 0; }
+            .account-content .center-div .inner .types .type i.energy-icon {
+              background-position: -153px 0; }
+          .account-content .center-div .inner .types .type span {
+            display: block;
+            padding-top: 3px;
+            font-size: 10px;
+            white-space: nowrap;
+            color: #666666;
+            text-align: center; }
+          .account-content .center-div .inner .types .type.active i.owner-icon {
+            background-position: -0px -51px; }
+          .account-content .center-div .inner .types .type.active i.financier-icon {
+            background-position: -51px -51px; }
+          .account-content .center-div .inner .types .type.active i.realtor-icon {
+            background-position: -102px -51px; }
+          .account-content .center-div .inner .types .type.active i.energy-icon {
+            background-position: -153px -51px; }
+        .account-content .center-div .inner a.button {
+          height: 40px;
+          line-height: 40px;
+          margin-top: 17px;
+          font-size: 12px; }
+        .account-content .center-div .inner a.button.reset-btn {
+          margin-top: 13px;}
+        .account-content .center-div .inner a.button.singup-btn {
+          margin-top: 11px;}
+        .account-content .center-div.create-form {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .account-content.create-form-content{
+            padding-bottom: 0;
+        }
+        .account-content .center-div .inner hr {
+          margin: 26px 0 21px 0; }
+        .account-content .center-div .inner .or {
+          font-size: 10px;
+          height: 9px;
+          margin: -30px auto 0 auto; }
+        .account-content .center-div .inner .sign-text {
+            position: relative;
+            top: -5px;
+            margin-bottom: 5px;
+        }
+        .account-content .center-div .inner .sign-input {
+            height: 42px;
+        }
+
+  /* input */
+  input {
+    height: 44px;
+    line-height: 42px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid #eaeaea;
+    font-size: 12px;
+    -webkit-appearance: none;
+    color: #666666; }
+
+  /* social-connect */
+  .social-connect .icon {
+    height: 46px;
+    width: 46px;
+    margin-bottom: 0;
+    background: url(../i/mobile-social.png) no-repeat;
+    background-size: 138px 46px;
+    margin-top: 0; }
+    .social-connect .icon.facebook-icon {
+      background-position: 0 0; }
+    .social-connect .icon.twitter-icon {
+      background-position: -46px 0; }
+    .social-connect .icon.google-icon {
+      background-position: -92px 0; }
+
+  .signin-form, .signup-form {
+    margin-top: 30px; }
+    .signin-form p, .signup-form p {
+      font-size: 11px; }
+    .signin-form .check-field, .signup-form .check-field {
+      margin: 15px 0 0 0; }
+      .signin-form .check-field i, .signup-form .check-field i {
+        float: left;
+        height: 15px;
+        width: 15px;
+        background: url(../i/mobile-check.png) no-repeat;
+        margin-right: 5px;
+        background-position: 0 0; }
+      .signin-form .check-field.checked i, .signup-form .check-field.checked i {
+        background-position: -15px 0; }
+      .signin-form .check-field p, .signup-form .check-field p {
+        font-size: 10px;
+        line-height: 15px; }
+
+  /* .popup */
+  .popup {
+    width: 200px;
+    min-height: 115px;
+    margin-left: -100px;
+    margin-top: -54px; }
+    .popup.success .title .message-icon {
+      height: 20px;
+      width: 20px;
+      float: left;
+      margin-left: 13px;
+      margin-right: 8px;
+      margin-top: 8px;
+      background-position: -155px -220px; }
+    .popup.pdf .title {
+      background: #febc20; }
+      .popup.pdf .title .message-icon {
+        height: 20px;
+        width: 20px;
+        float: left;
+        margin-left: 13px;
+        margin-right: 8px;
+        margin-top: 8px;
+        background-position: -240px -185px; }
+    .popup.error .title .message-icon {
+      height: 20px;
+      width: 20px;
+      margin-left: 13px;
+      margin-right: 8px;
+      margin-top: 8px;
+      background-position: -100px -220px; }
+    .popup .title {
+      height: 34px;
+      line-height: 34px;
+      font-size: 13px; }
+      .popup .title .close-icon {
+        height: 11px;
+        width: 11px;
+        margin-right: 14px;
+        margin-top: 12px;
+        background-position: -120px -220px; }
+    .popup .inner {
+      padding: 10px 15px; }
+      .popup .inner p {
+        font-size: 11px;
+        line-height: 16px;
+        padding: 5px 0; }
+      .popup .inner a.button {
+        height: 25px;
+        line-height: 23px;
+        margin-top: 10px;
+        font-size: 11px; }
+
+  /* inner-content */
+  .inner-content {
+    padding: 0 15px; }
+    .inner-content h1.title {
+      font-size: 17px;
+      margin: 25px 0 17px 0; }
+
+  /* admin-panel */
+  .admin-panel {
+    background: #ffffff;
+    margin-bottom: 15px; }
+    .admin-panel .header {
+      height: 25px;
+      line-height: 23px;
+      font-size: 10px;
+      font-weight: 600; }
+    .admin-panel .item-row {
+      padding: 5px; }
+      .admin-panel .item-row .img-upload {
+        width: 80px; }
+        .admin-panel .item-row .img-upload img {
+          width: 80px;
+          height: 50px; }
+        .admin-panel .item-row .img-upload a {
+          bottom: 5px;
+          font-size: 10px; }
+      .admin-panel .item-row .center-wrapper {
+        width: calc((100% - 214px));
+        float: left;
+        padding: 0 5px; }
+        .admin-panel .item-row .center-wrapper .location {
+          height: auto;
+          font-size: 10px; }
+          .admin-panel .item-row .center-wrapper .location i.location-icon {
+            width: 8px;
+            height: 14px;
+            background-position: -100px -245px; }
+          .admin-panel .item-row .center-wrapper .location span {
+            top: -5px; }
+        .admin-panel .item-row .center-wrapper .box {
+          width: 100%;
+          margin-bottom: 5px; }
+      .admin-panel .item-row .rate-wrapper {
+        width: 84px;
+        float: left; }
+      .admin-panel .item-row .done-wrapper {
+        width: 47px; }
+        .admin-panel .item-row .done-wrapper a {
+          width: 24px;
+          margin: 15px auto 0 auto;
+          font-size: 10px; }
+          .admin-panel .item-row .done-wrapper a i {
+            width: 24px;
+            height: 24px;
+            background-position: -131px -220px; }
+      .admin-panel .item-row .box {
+        float: none;
+        margin-right: 5px;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        overflow: hidden; }
+        .admin-panel .item-row .box.rate {
+          width: 79px;
+          margin-top: 0px;
+          margin-right: 0;
+          margin-left: 5px; }
+        .admin-panel .item-row .box.total {
+          margin-left: 5px;
+          width: 79px;
+          margin-top: 5px;
+          margin-right: 0; }
+        .admin-panel .item-row .box h1 {
+          margin: 0;
+          padding: 0;
+          color: #727272;
+          font-size: 12px;
+          text-align: center;
+          height: 24px;
+          background: #f9f9f9;
+          line-height: 22px;
+          border-bottom: 1px solid #eaeaea; }
+        .admin-panel .item-row .box input {
+          height: 31px;
+          line-height: 31px;
+          border: none;
+          padding: 0 5px;
+          text-align: center;
+          color: #666666;
+          font-size: 14px; }
+
+  /* tabs */
+  .tabs {
+    height: 31px;
+    padding: 0 15px; }
+    .tabs ul li a {
+      font-size: 12px;
+      padding: 0 6px;
+      display: block;
+      line-height: 28px;
+      margin-right: 12px; }
+      .tabs ul li a.active, .tabs ul li a:hover {
+        border-bottom: 2px solid #278dc5; }
+
+  .homeowner .inner-content {
+    min-height: auto;
+    margin-bottom: 30px; }
+
+  /*steps */
+  .steps {
+    height: 30px; }
+    .steps ul li {
+      width: 23%; }
+
+    .steps ul li:nth-child(1){
+        width: 21%;
+    }
+    .steps ul li:nth-child(2){
+        width:18%;
+    }
+    .steps ul li:nth-child(3){
+        width: 32%;
+    }
+    .steps ul li:nth-child(4){
+        width: 26%;
+    }
+      .steps ul li p {
+        color: #666666;
+        font-size: 9px;
+        padding: 0 0px 0 12px;
+        line-height: 28px;
+        border-bottom: 2px solid transparent;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .steps ul li i {
+        height: 30px;
+        width: 10px;
+        right: -10px;
+        top: 0;
+        display: block;
+        background-position: -155px -245px; }
+      .steps ul li.active p {
+        border-bottom: 2px solid #278dc5; }
+
+  /* inner-step-content */
+  .inner-step-content, .inner-item-content {
+    min-height: 100px;
+    padding-bottom: 60px; }
+    .inner-step-content .buttons, .inner-item-content .buttons {
+      height: 40px; }
+      .inner-step-content .buttons .button, .inner-item-content .buttons .button {
+        width: 75px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 12px; }
+        .inner-step-content .buttons .button.next, .inner-item-content .buttons .button.next {
+          margin: 7px 10px 0 0; }
+        .inner-step-content .buttons .button.update, .inner-item-content .buttons .button.update {
+          width: 105px; }
+        .inner-step-content .buttons .button.back, .inner-item-content .buttons .button.back {
+          margin: 7px 0 0 10px; }
+    .inner-step-content input, .inner-item-content input {
+      height: 25px;
+      line-height: 23px;
+      padding-left: 10px; }
+    .inner-step-content label, .inner-item-content label {
+      font-size: 12px;
+      line-height: 30px; }
+    .inner-step-content h2, .inner-item-content h2 {
+      font-size: 12px;
+      line-height: 30px; }
+    .inner-step-content .item, .inner-item-content .item {
+      margin-right: 10px;
+      height: 60px; }
+
+  /* contact-info */
+  .contact-info {
+    width: 100%;
+    padding: 25px 10px; }
+    .contact-info .item.name {
+      width: 100%; }
+    .contact-info .item.email, .contact-info .item.password {
+      width: 100%; }
+
+  .alert-info {
+    font-size: 11px; }
+
+  /* contact-info */
+  .utility-info {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px; }
+    .utility-info .item.password {
+      width: 100%; }
+
+  /* contact-info */
+  .primary-address-info {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px; }
+    .primary-address-info .item.address {
+      width: 100%; }
+    .primary-address-info .item.city {
+      width: 100%; }
+    .primary-address-info .item.state {
+      width: 100%; }
+    .primary-address-info .item.zip {
+      width: 100%; }
+
+  .wrap-dd-select, .large-dropdown.wrap-dd-select {
+    height: 30px;
+    line-height: 28px;
+    width: 100%;
+    margin: 0;
+    font-size: 11px;
+    padding: 0 10px; }
+
+  .wrap-dd-select .dropdown li a, .large-dropdown.wrap-dd-select .dropdown li a {
+    line-height: 30px;
+    height: 30px; }
+
+    .wrap-dd-select:after {
+        right: 10px;
+    }
+  /* address-list */
+  .address-list {
+    padding: 0 10px;
+    width: 100%; }
+    .address-list .button, .primary-address-info .button {
+      width: 120px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 12px;
+      margin: 25px 0 15px 10px; }
+      .address-list .button.view .primary-address-info .button.view {
+        background: #f4f4f4;
+        margin: 12px 0 0 0;
+        line-height: 25px; }
+    .address-list .address-item {
+      border-top: 1px solid #eaeaea;
+      padding: 10px;
+      position: relative; }
+      .address-list .address-item .item.address {
+        width: 100%; }
+      .address-list .address-item .item.city {
+        width: 100%; }
+      .address-list .address-item .item.state {
+        width: 100%; }
+      .address-list .address-item .item.zip {
+        width: 100%; }
+
+  /* analysis-section */
+  .analysis-section {
+    padding: 0 10px; }
+    .analysis-section h2.title {
+      font-size: 17px;
+      margin: 20px 0 10px 0; }
+    .analysis-section .house-image {
+      height: 250px; }
+      .analysis-section .house-image img {
+        height: 250px; }
+      .analysis-section .house-image .text {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px; }
+    .analysis-section .box {
+      width: 100%;
+      height: 100px;
+      margin: 25px auto; }
+      .analysis-section .box strong {
+        font-size: 22px;
+        line-height: 22px;
+        padding: 20px 0 0 0; }
+      .analysis-section .box small {
+        font-size: 12px;
+        padding: 5px 0 0 0; }
+      .analysis-section .box .foot {
+        width: 100%;
+        height: 30px;
+        line-height: 28px;
+        font-size: 12px; }
+    .analysis-section .button {
+      width: 100%;
+      height: 30px;
+      line-height: 28px;
+      font-size: 12px;
+      margin: 0 auto 30px auto; }
+
+    .signin-form p.text-center {
+        padding-top: 27px;
+    }
+
+  .inner-item-content {
+    border: 0;
+    padding: 0 15px; }
+    .inner-item-content .your-info {
+      height: auto;
+      width: 100%;
+      margin: 30px auto; }
+    .inner-item-content .button {
+      height: 25px;
+      line-height: 25px;
+      font-size: 12px;
+      margin: 8px 0 0 0; }
+      .inner-item-content .button.add-customer {
+        width: 85px; }
+      .inner-item-content .button.view {
+        margin: 8px 0 0 0;
+        height: 23px;
+        font-size: 10px;
+        width: 90px;
+        line-height: 21px; }
+    .inner-item-content h1.title {
+      font-size: 17px;
+      padding: 0;
+      line-height: 40px; }
+
+  .your-info {
+    padding: 10px; }
+    .your-info h3 {
+      font-size: 17px;
+      padding: 0;
+      margin: 10px 0; }
+    .your-info .item {
+      height: 65px; }
+      .your-info .item.name {
+        width: 100%;
+        float: left; }
+      .your-info .item.company, .your-info .item.email, .your-info .item.password {
+        width: 100%; }
+
+  /* customer-table */
+  .customer-table {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .customer-table tr th {
+      display: none; }
+    .customer-table tr td {
+      vertical-align: top;
+      padding: 10px;
+      font-size: 12px;
+      color: #454545;
+      border-top: 1px solid #efefef;
+      display: none; }
+      .customer-table tr td:first-child {
+        display: block; }
+      .customer-table tr td .mobile {
+        display: block; }
+        .customer-table tr td .mobile h5 {
+          font-weight: 700;
+          color: #278DC5;
+          font-size: 12px; }
+      .customer-table tr td a {
+        font-weight: 600; }
+      .customer-table tr td .house-item {
+        height: auto;
+        padding-bottom: 0px; }
+        .customer-table tr td .house-item p {
+          margin: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          line-height: 14px; }
+        .customer-table tr td .house-item .view {
+          margin-bottom: 5px;
+          margin-right: 9px; }
+        .customer-table tr td .house-item i.icon-primary {
+          background-position: -175px -220px;
+          height: 14px;
+          width: 14px;
+          margin-right: 5px;
+          float: left; }
+      .customer-table tr td a.edit-icon {
+        background-position: -190px -222px;
+        height: 12px;
+        width: 12px;
+        margin-top: 10px;
+        margin-right: 5px;
+        display: inline-block; }
+      .customer-table tr td a.delete-icon {
+        background-position: -202px -222px;
+        height: 12px;
+        width: 12px;
+        margin-top: 10px;
+        margin-right: 5px;
+        display: inline-block; }
+      .customer-table tr td a:hover {
+        opacity: 0.6; }
+    .customer-table tr:nth-child(odd) {
+      background: #fcfcfc; }
+
+  /* customer-popup */
+  .customer-popup {
+    width: 300px;
+    top: 25px;
+    margin-left: -150px; }
+    .customer-popup .inner h1 {
+      font-size: 20px;
+      padding: 0 0 10px 0; }
+      .customer-popup .inner h1 .close-icon {
+        height: 11px;
+        width: 11px;
+        background-position: -120px -235px; }
+    .customer-popup .inner .your-info .view {
+      height: 23px;
+      font-size: 10px;
+      display: inline-block;
+      width: 100px;
+      line-height: 21px; }
+
+  /* analysis-bottom */
+  .analysis-bottom {
+    margin-top: 35px;
+    padding: 10px; }
+    .analysis-bottom h3 {
+      font-size: 17px;
+      line-height: 20px; }
+    .analysis-bottom .finance-box {
+      width: 100%;
+      height: auto; }
+      .analysis-bottom .finance-box .item {
+        height: 31.25px;
+        line-height: 31.25px; }
+        .analysis-bottom .finance-box .item.double-item {
+          height: 62.5px; }
+        .analysis-bottom .finance-box .item .left {
+          float: left;
+          width: 100px;
+          padding: 20px 15px;
+          height: 62.5px; }
+          .analysis-bottom .finance-box .item .left p {
+            padding: 0; }
+        .analysis-bottom .finance-box .item .right {
+          width: calc(100% - 100px); }
+          .analysis-bottom .finance-box .item .right p {
+            width: 115px; }
+        .analysis-bottom .finance-box .item p {
+          padding-left: 10px;
+          font-size: 12px; }
+        .analysis-bottom .finance-box .item strong {
+          padding-right: 10px;
+          font-size: 14px; }
+          .analysis-bottom .finance-box .item strong.blue {
+            font-size: 16px; }
+    .analysis-bottom .finance-input {
+      width: 100%;
+      margin: 25px auto; }
+      .analysis-bottom .finance-input label {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    .analysis-bottom .finance-table {
+      width: 100%; }
+      .analysis-bottom .finance-table tr th {
+        line-height: 12px;
+        font-size: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px; }
+      .analysis-bottom .finance-table tr td {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        padding-left: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        .analysis-bottom .finance-table tr td:last-child {
+          font-size: 15px; }
+
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+
+    .button.back .back-icon {
+        background-position: -203px -245px;
+        height: 25px;
+        width: 12px;
+        display: block;
+        position: absolute;
+        left: 8px;
+    }
+    .button.next .next-icon {
+        background-position: -190px -245px;
+        height: 25px;
+        width: 12px;
+        display: block;
+        position: absolute;
+        left: 55px;
+    }
+
+    .primary-address-info .button.view {
+        margin-top: 25px;
+    }
+
+    .primary-address-info .button.view {
+        background: #f4f4f4;
+        margin: 12px 0 0 0;
+        line-height: 25px;
+    }
+
+    .password-strength {
+        top: 74px;
+    }
+
+    .analysis-bottom .button {
+        width: 150px;
+        height: 33px;
+        line-height: 31px;
+        font-size: 12px;
+        bottom: -20px;
+    }
+
+    .analysis-bottom .button i {
+        background-position: -240px -185px;
+        width: 20px;
+        height: 20px;
+        margin: 5px 5px 0 12px;
+    }
+    .tabs ul li:first-child a{
+        width: 78px;
+    }
+    .tabs ul li.customer-tab a{
+        width: 70px;
+    }
+
+
+    aside{
+        background-color: #333333;
+        width: 324px;
+        height: 100%;
+        overflow: auto;
+        z-index: 999;
+        margin-left: -324px;
+        display: none;
+        left: 0;
+        top: 0;
+    }
+    aside.open{
+        margin-left: 0;
+        display: block;
+        position: fixed;
+    }
+    .main-wrapper.open{
+        margin-left: 324px;
+        position: relative;
+        width: 100%;
+    }
+    aside a.logo {
+        display: block;
+        text-align: center;
+        padding-top: 27px;
+        margin-bottom: 20px;
+    }
+
+    aside a.logo img {
+        width: 175px;
+        height: 32px;
+    }
+    aside nav {
+        padding-bottom: 10px;
+    }
+        aside nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+            aside nav ul li{
+                height: 50px;
+                line-height: 50px;
+                padding-left: 41px;
+                color: #fff;
+            }
+
+            aside nav ul li span{
+                color: #278DC5;;
+            }
+
+                aside nav ul li > a{
+                    color: #999999;
+                }
+                    aside nav ul li a.active, aside nav ul li a:hover {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+
+    .main-wrapper {
+        /* equal to footer height */
+        margin-bottom: -347px;
+    }
+
+    footer, .main-wrapper:after {
+        height: 348px;
+    }
+
+    .signin-form.reset-form {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .customer-table tr td .house-item .view {
+        margin-right: 3px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+
+    .signup-form input.email {
+        height: 50px;
+        line-height: 48px;
+    }
+    .signup-form {
+        margin-top: 37px;
+    }
+    .account-content .center-div  .inner  .singup-btn.button {
+        margin-top: 14px;
+    }
+
+
+    .account-content .center-div.sign-in-form {
+        height: 576px;
+    }
+
+    .account-content.reset-page {
+        height: 639px;
+    }
+}

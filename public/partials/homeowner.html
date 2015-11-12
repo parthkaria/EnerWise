@@ -1,0 +1,191 @@
+<!-- header -->
+<header data-ng-include="'partials/header-login.html'"></header>
+
+
+<!-- tabs -->
+<div class="tabs">
+    <ul>
+        <li><a data-ng-click="tab='info'" data-ng-class="{active : tab === 'info'}" href="javascript:;">Home Info</a></li>
+        <li><a data-ng-click="tab='analysis'" data-ng-class="{active : tab === 'analysis'}" href="javascript:;">Home Analysis</a></li>
+    </ul>
+</div>
+
+<!-- inner-content-->
+<div class="inner-content">
+    <h1 data-ng-if="tab ==='info'" class="title">Household Details</h1>
+
+    <h1 data-ng-if="tab ==='analysis'" class="title">Isaac Newton</h1>
+
+    <div data-ng-if="tab ==='info'" class="alert alert-info alert-dismissible" data-ng-class="{hidden: alertClose}">
+        <button type="button" class="close" data-ng-click="alertClose = true"><span>&times;</span></button>
+        report is not yet finished, it can take up to 48 hours to complete. You’ll receive an email when it's done.
+    </div>
+    <div data-ng-if="tab === 'info'">
+        <div class="steps">
+            <ul>
+                <li data-ng-click="goToStep(0)" data-ng-class="{active : step >= 0}"><p>Contact Info</p><i class="icon step-icon"></i></li>
+                <li data-ng-click="goToStep(1)" data-ng-class="{active : step >= 1}"><p>Utility Info</p><i class="icon step-icon"></i></li>
+                <li data-ng-click="goToStep(2)" data-ng-class="{active : step >= 2}"><p>Primary Home Address</p><i class="icon step-icon"></i></li>
+                <li data-ng-click="goToStep(3)" data-ng-class="{active : step === 3}"><p>House of Interest</p><i class="icon step-icon"></i></li>
+            </ul>
+        </div>
+        <!--contact info -->
+        <div data-ng-if="step === 0" class="inner-step-content">
+            <div class="contact-info clearfix">
+                <div class="item name">
+                    <label>First Name</label>
+                    <input type="text" data-ng-model="contact.firstname"/>
+                </div>
+                <div class="item name">
+                    <label>Last Name</label>
+                    <input type="text" data-ng-model="contact.lastname"/>
+                </div>
+                <div class="item email">
+                    <label>Email</label>
+                    <input type="email" data-ng-model="contact.email"/>
+                </div>
+                <div class="item password last">
+                    <label>Password</label>
+                    <input type="password" data-ng-model="contact.password"/>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="javascript:;" class="button next" data-ng-click="nextStep1()"><i class="icon next-icon"></i>NEXT</a>
+            </div>
+        </div>
+        <!-- utility info -->
+        <div data-ng-if="step === 1" class="inner-step-content">
+            <div class="utility-info clearfix">
+                <div class="item password">
+                    <label>Electric Co</label>
+
+                    <div data-dropdown-select="electric"
+                         data-dropdown-model="utility.electric"
+                         data-dropdown-item-label="text">
+                    </div>
+                </div>
+                <div class="item password">
+                    <label>Login</label>
+                    <input type="text" data-ng-model="utility.login"/>
+                </div>
+                <div class="item password last">
+                    <label>Password</label>
+                    <input type="password" data-ng-model="utility.password"/>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="javascript:;" class="button back" data-ng-click="backStep2()"><i class="icon back-icon"></i>BACK</a>
+                <a href="javascript:;" class="button next" data-ng-click="nextStep2()"><i class="icon next-icon"></i>NEXT</a>
+            </div>
+        </div>
+        <!--primary address -->
+        <div data-ng-if="step === 2" class="inner-step-content">
+            <div class="primary-address-info">
+                <h2>Residents in Home</h2>
+
+                <div class="clearfix">
+                    <div class="item address">
+                        <label>Address</label>
+                        <input type="text" data-ng-model="resident.address"/>
+                    </div>
+
+                    <div class="item city">
+                        <label>City</label>
+                        <input type="text" data-ng-model="resident.city"/>
+                    </div>
+
+                    <div class="item state">
+                        <label>State</label>
+
+                        <div data-dropdown-select="state"
+                             data-dropdown-model="resident.state"
+                             data-dropdown-item-label="text">
+                        </div>
+                    </div>
+
+                    <div class="item zip last">
+                        <label>Zip</label>
+                        <input type="text" data-ng-model="resident.zip"/>
+                    </div>
+                </div>
+                <h2>Residents in Home</h2>
+
+                <div class="clearfix">
+
+                    <div class="item zip">
+                        <label># of Adults</label>
+                        <input data-only-integer="" type="text" data-ng-model="resident.adult"/>
+                    </div>
+
+
+                    <div class="item zip last">
+                        <label># of Children</label>
+                        <input data-only-integer="" type="text" data-ng-model="resident.child"/>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <a href="javascript:;" class="button view" data-ng-click="viewAnalysis()">View analysis</a>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="javascript:;" class="button back" data-ng-click="backStep3()"><i class="icon back-icon"></i>BACK</a>
+                <a href="javascript:;" class="button next" data-ng-click="nextStep3()"><i class="icon next-icon"></i>NEXT</a>
+            </div>
+        </div>
+        <!-- addresses -->
+        <div data-ng-if="step === 3" class="inner-step-content">
+            <div class="address-list clearfix">
+                <div class="clearfix">
+                    <a href="javascript:;" class="button" data-ng-click="addHouse()">Add House</a>
+                </div>
+                <div data-ng-repeat="house in houses" class="address-item clearfix">
+                    <div class="clearfix">
+                        <div class="item address">
+                            <label>Address</label>
+                            <input type="text" data-ng-model="house.address"/>
+                        </div>
+
+                        <div class="item city">
+                            <label>City</label>
+                            <input type="text" data-ng-model="house.city"/>
+                        </div>
+
+                        <div class="item state">
+                            <label>State</label>
+
+                            <div data-dropdown-select="state"
+                                 data-dropdown-model="house.state"
+                                 data-dropdown-item-label="text">
+                            </div>
+                        </div>
+
+                        <div class="item zip last">
+                            <label>Zip</label>
+                            <input type="text" data-ng-model="house.zip"/>
+                        </div>
+                        <a href="javascript:;" class="glyphicon glyphicon-remove-circle" data-ng-click="removeItem($index)"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="javascript:;" class="button back" data-ng-click="backStep4()"><i class="icon back-icon"></i>BACK</a>
+                <a href="javascript:;" class="button next update" data-ng-click="updateInformation()">UPDATE INFORMATION</a>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+    <div data-ng-if="tab === 'analysis'">
+        <!-- analysis-top -->
+        <div data-ng-include="'partials/analysis-top.html'"></div>
+
+    </div>
+</div>
+<!-- message-popup -->
+<div data-ng-include="'partials/message-popup.html'"></div>
+
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>
+

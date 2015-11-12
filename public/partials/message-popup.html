@@ -1,0 +1,10 @@
+<div class="popup" data-ng-if="message.show" data-ng-class="{'error' : message.type === 'error', 'success' : message.type === 'success', 'pdf' : message.type === 'pdf'}">
+    <div class="title">
+        <i class="icon message-icon"></i> {{message.title}}
+        <a href="javascript:;" class="icon close-icon" data-ng-click="message.show = false"></a>
+    </div>
+    <div class="inner">
+        <p  data-ng-class="{'text-middle' : message.title !== 'Success' || message.type === 'pdf'}">{{message.text}}</p>
+        <a href="javascript:;" class="button" data-ng-click="message.show = false">{{message.button}}</a>
+    </div>
+</div>

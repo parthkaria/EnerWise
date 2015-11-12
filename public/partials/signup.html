@@ -1,0 +1,60 @@
+<!-- header -->
+<header data-ng-include="'partials/header.html'"></header>
+
+<!-- account-content -->
+<div class="clearfix account-content create-form-content">
+    <!-- center-div -->
+    <div class="center-div create-form">
+        <div class="inner">
+            <h1 class="signup-title">Create Account</h1>
+
+            <h3>Account Type</h3>
+
+            <!-- types -->
+            <div class="types clearfix">
+                <a href="#signup/owner" class="type" data-ng-class="{'active': type === 'owner'}">
+                    <i class="icon owner-icon"></i>
+
+                    <span>Homeowner</span>
+                </a>
+                <a href="#signup/financier" class="type" data-ng-class="{'active': type === 'financier'}">
+                    <i class="icon financier-icon"></i>
+
+                    <span>Financier</span>
+                </a>
+                <a href="#signup/realtor" class="type" data-ng-class="{'active': type === 'realtor'}">
+                    <i class="icon realtor-icon"></i>
+
+                    <span>Realtor</span>
+                </a>
+                <a href="#signup/energy" class="type" data-ng-class="{'active': type === 'energy'}">
+                    <i class="icon energy-icon"></i>
+
+                    <span>Energy Installer</span>
+                </a>
+            </div>
+            <!--signup-form-->
+            <div class="signup-form">
+                <input type="text" placeholder="First Name" data-ng-model="user.firstname" class="firstname sign-input"/>
+                <input type="text" placeholder="Last Name" data-ng-model="user.lastname" class="lastname sign-input"/>
+
+                <div class="clearfix"></div>
+                <input type="email" placeholder="Email" data-ng-model="user.email" class="sign-input email"/>
+                <input type="password" placeholder="Password" class="password sign-input" data-ng-model="user.password"/>
+
+                <div class="check-field clearfix" data-ng-class="{checked : agreement}" data-ng-click="agreement =!agreement">
+                    <i class="icon"></i>
+
+                    <p>I agree to <a href="javascript:;">EnergyWise</a> Terms.</p>
+                </div>
+            </div>
+            <a href="javascript:;" class="button singup-btn" data-ng-click="signUp()">SIGN UP</a>
+        </div>
+    </div>
+</div>
+
+<!-- message-popup -->
+<div data-ng-include="'partials/message-popup.html'"></div>
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>

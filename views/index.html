@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-ng-app="SUNSHOT">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>SunShot - EnerWise - Responsive Website</title>
+
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/rzslider.css"/>
+    <link rel="stylesheet" type="text/css" href="css/screen.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mobile.css"/>
+
+    <!-- libs -->
+    <script src="lib/jquery.js"></script>
+    <script src="angularjs/angular.min.js"></script>
+    <script src="angularjs/angular-route.min.js"></script>
+    <script src="angularjs/angular-dropdowns.js"></script>
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/d3tip.js"></script>
+    <script src="lib/jquery.html5-placeholder-shim.js"></script>
+    <script src="angularjs/angular-placeholder-shim.js"></script>
+    <script src="lib/rzslider.min.js"></script>
+    <!-- end libs -->
+
+    <!-- app scripts -->
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    <!-- end app scripts -->
+</head>
+<body data-ng-class="{open: menu}" class="{{bodyClass}}">
+<!-- main content -->
+<div data-ng-view data-autoscroll="true" class="main-wrapper" data-ng-class="{open: menu}"></div>
+<!-- end main content -->
+<!-- aside -->
+<aside data-ng-include="'partials/menu.html'" data-ng-class="{open: menu}"></aside>
+<div class="menu-overlay" data-ng-class="{open: menu}" data-ng-click="toggleMenu()"></div>
+<!-- footer -->
+<footer data-ng-include="'partials/footer.html'"></footer>
+
+</body>
+</html>

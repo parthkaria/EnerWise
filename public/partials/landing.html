@@ -1,0 +1,45 @@
+<!-- header -->
+<header data-ng-include="'partials/header.html'"></header>
+<!--main-logo-->
+<div class="clearfix main-logo-wrapper">
+    <div class="icon main-logo"></div>
+</div>
+<!-- sections -->
+<div class="sections clearfix">
+
+    <div class="section" data-ng-click="goto('signup/owner')"  data-ng-mouseover="section1 = true" data-ng-mouseleave="section1 = false" data-ng-class="{'active' : section1}">
+        <i class="icon owner-icon"></i>
+
+        <h3>Home Owner</h3>
+
+        <p>See your home</p>
+        <a href="#signup/owner">CREATE ACCOUNT</a>
+    </div>
+    <div data-ng-click="goto('signup/financier')" data-ng-mouseover="section2 = true" data-ng-mouseleave="section2 = false" class="section" data-ng-class="{'active' : section2}">
+        <i class="icon financier-icon"></i>
+
+        <h3>Financier</h3>
+
+        <p>Lend for solar</p>
+        <a href="#signup/financier">CREATE ACCOUNT</a>
+    </div>
+    <div data-ng-click="goto('signup/realtor')" data-ng-mouseover="section3 = true" data-ng-mouseleave="section3 = false" class="section" data-ng-class="{'active' : section3}">
+        <i class="icon realtor-icon"></i>
+
+        <h3>Realtor</h3>
+
+        <p>Show eﬃcient home</p>
+        <a href="#signup/realtor">CREATE ACCOUNT</a>
+    </div>
+    <div data-ng-click="goto('signup/energy')" data-ng-mouseover="section4 = true" data-ng-mouseleave="section4 = false" class="section" data-ng-class="{'active' : section4}">
+        <i class="icon energy-icon"></i>
+
+        <h3>Energy Installer</h3>
+
+        <p>Connect with new</p>
+        <a  href="#signup/energy">CREATE ACCOUNT</a>
+    </div>
+</div>
+
+<!--overlay-->
+<div data-ng-if="message.show || customerModal" class="overlay"></div>
