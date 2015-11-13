@@ -7,8 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-
 
 var app = express();
 
@@ -17,9 +15,6 @@ var app = express();
 app.set('view engine', 'ejs');*/
 app.use(express.static(__dirname + '/views'));
 
-var mongoose=require("mongoose");
-mongoose.connect("mongodb://localhost/demo");
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,9 +22,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/checker', require('./routes/passwrdChecker'));
-app.use('/catagories', require('./routes/catagory'));
 app.use('/createUser',require('./routes/createUser'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

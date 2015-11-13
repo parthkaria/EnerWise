@@ -9,5 +9,6 @@ var createUserCtrl = require('../controller/createUserCtrl');
 router.post('/', function(req, res, next) {
     console.log("inside post create user");
     createUserCtrl.saveUser(req.body.user);
+    res.send("user successfully created");
 });
 module.exports = router;

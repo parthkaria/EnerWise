@@ -121,6 +121,7 @@
                     showError('You must agree our terms and conditions.', $scope);
                     return false;
                 }
+                $scope.user.type=$scope.type;
                 var userCreated= createUser($scope.user);
                 if (userCreated && $scope.type === 'financier') {
                     $location.path('financier');
