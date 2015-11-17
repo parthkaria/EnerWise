@@ -53,7 +53,7 @@
         };
     }]);
 
-    appServices.factory('dataServicesPost', ['$http', '$q', function ($http, $q) {
+    appServices.factory('dataServicesPut', ['$http', '$q', function ($http, $q) {
         return {
             save: function (url,user) {
                 var deferred = $q.defer();

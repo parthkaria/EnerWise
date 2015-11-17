@@ -29,7 +29,6 @@ module.exports = function(passport) {
                 console.log(user.length);
                 if(user.length==0)
                 {
-
                     return done(null,null,{
                         message: 'Username does not exists'
                     });

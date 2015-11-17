@@ -201,7 +201,7 @@
                     return false;
                 }*/
               //  $scope.user.username=$scope.user.email;
-                var promise = dataServicesPost.query('signin',$scope.user);
+                var promise = dataServicesPost.save('signin',$scope.user);
                 promise.then(function (data) {
                     if(data.successFlag==true)
                     {
@@ -334,9 +334,9 @@
 
     // reset  page controller
     appControllers.controller('homeownerPage',
-        function ($scope, $rootScope, dataServices,helperDataServices) {
+        function ($scope, $rootScope, dataServices,helperDataServices,dataServicesPost,dataServicesPut) {
             $rootScope.bodyClass = 'homeowner';
-            $scope.user = { name: "John Smith"};
+            $scope.user = { name: "John Smith"};dataServices
             $rootScope.page = 'inner';
             $scope.tab = 'info'; // default tab
             $scope.houses = [
@@ -412,8 +412,14 @@
                     showError('Password is required.', $scope);
                     return false;
                 }
+                var promise = dataServicesPut.save('createUser/update',{user:$scope.contact});
+                promise.then(function (data) {
+                    console.log(data);
+                    $scope.step = 1;
+                    //$scope.items = data.admin;
+                }, function (data) {
+                });
 
-                $scope.step = 1;
             };
             $scope.nextStep2 = function () {
                 if (emptyValidate($scope.utility.electric)) {
@@ -546,6 +552,7 @@
             };
 
            var fillUserDetails=function(){
+               $scope.contact.userId=loggedInUserObj.id;
                 $scope.contact.firstname=loggedInUserObj.first_name;
                 $scope.contact.lastname=loggedInUserObj.last_name;
                 $scope.contact.email=loggedInUserObj.email;

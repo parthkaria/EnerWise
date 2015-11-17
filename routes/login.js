@@ -16,13 +16,13 @@ router.post('/',
             }
             else
             {
-                UserHouse.findAll({
+               /* UserHouse.findAll({
                     where: {
                         user_id: user
                     }
                 }).then(function (house) {
                     console.log(house.length());
-                });
+                });*/
 
                 var info= {};
                 info.successFlag=true;

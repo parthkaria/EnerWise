@@ -11,4 +11,11 @@ router.post('/', function(req, res, next) {
     createUserCtrl.saveUser(req.body.user);
     res.send("user successfully created");
 });
+
+/* Put user Object */
+router.put('/update', function(req, res, next) {
+    console.log("inside put create user");
+    createUserCtrl.updateUser(req,res,next);
+});
+
 module.exports = router;

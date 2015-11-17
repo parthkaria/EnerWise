@@ -6,6 +6,7 @@ var nodemailer = require("nodemailer");
 var fs=require('fs');
 var PropertiesReader = require('properties-reader');
 var properties = PropertiesReader('config/mail.properties');
+var User=require('../models/user');
 
 var smtpTransport= nodemailer.createTransport({
    service:"Gmail",
@@ -49,4 +50,32 @@ exports.saveUser=function(userObj){
        }
     });
 
+};
+
+exports.updateUser=function(req,res,next){
+  console.log(req.body.user);
+  /*  User.find({ where: {id: req.body.user.userId} }).success(function(userObj) {
+        if (userObj) { // if the record exists in the db
+        //    userObj.updateAttributes({
+        //        last_name: req.body.user.lastname
+        //    }).success(function(data) {
+        //        console.log(data);
+        //    });
+            console.log("hmm mle to chhe");
+
+        }
+        else{
+            console.log("hmm nthi mltu");
+
+        }
+    }).failure(function(err){
+       console.log(err);
+    });*/
+
+    var userObj=req.body.user;
+    var user1=User.build({id:userObj.userId,first_name:'',password:'',last_name:'hmmm',email:'mkataria920@gmail.com',created_at:now(),updatedAt:now()});
+    user1.last_name=userObj.lastname;
+    user1.update(function(err){
+        console.log(err);
+    });
 };
