@@ -21,12 +21,27 @@
         };
     }]);
 
-
-    appServices.factory('restReq', ['$http', '$q', function ($http, $q) {
+    appServices.factory('helperDataServices', ['$http', '$q', function ($http, $q) {
         return {
-            query: function (url,user) {
+            query: function (url) {
                 var deferred = $q.defer();
-                $http.post(url,{user:user}).
+                $http({method: 'GET', url: url }).
+                success(function (data, status, headers, config) {
+                    deferred.resolve(data);
+                }).
+                error(function (data, status, headers, config) {
+                    deferred.reject(data);
+                });
+                return deferred.promise;
+            }
+        };
+    }]);
+
+    appServices.factory('dataServicesPost', ['$http', '$q', function ($http, $q) {
+        return {
+            save: function (url,user) {
+                var deferred = $q.defer();
+                $http.post(url,user).
                     success(function (data, status, headers, config) {
                         deferred.resolve(data);
                     }).
@@ -38,5 +53,20 @@
         };
     }]);
 
+    appServices.factory('dataServicesPost', ['$http', '$q', function ($http, $q) {
+        return {
+            save: function (url,user) {
+                var deferred = $q.defer();
+                $http.put(url,user).
+                success(function (data, status, headers, config) {
+                    deferred.resolve(data);
+                }).
+                error(function (data, status, headers, config) {
+                    deferred.reject(data);
+                });
+                return deferred.promise;
+            }
+        };
+    }]);
 
 })();

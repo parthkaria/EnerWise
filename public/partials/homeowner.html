@@ -93,6 +93,10 @@
                     <div class="item city">
                         <label>City</label>
                         <input type="text" data-ng-model="resident.city"/>
+                       <!-- <div data-dropdown-select="city"
+                             data-dropdown-model="resident.city"
+                             data-dropdown-item-label="text">
+                        </div>-->
                     </div>
 
                     <div class="item state">
@@ -100,7 +104,7 @@
 
                         <div data-dropdown-select="state"
                              data-dropdown-model="resident.state"
-                             data-dropdown-item-label="text">
+                             data-dropdown-item-label="text" ng-click="getCities()">
                         </div>
                     </div>
 

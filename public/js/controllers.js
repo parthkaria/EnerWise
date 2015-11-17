@@ -3,6 +3,8 @@
     'use strict';
 
     var appControllers = angular.module('SUNSHOT.controllers', ['SUNSHOT.services']);
+    //global variables
+    var loggedInUserObj={};
 
     /* Show error message */
     var showError = function (message, $scope) {
@@ -67,7 +69,7 @@
 
     // signup  page controller
     appControllers.controller('signupPage',
-        function ($scope, $rootScope, $routeParams, $location,restReq) {
+        function ($scope, $rootScope, $routeParams, $location,dataServicesPost) {
             $rootScope.bodyClass = 'inner';
             $rootScope.landing = false;
             $rootScope.page = 'signup';
@@ -134,7 +136,7 @@
 
             var createUser=function(userObj){
 
-                var promise = restReq.query('createUser',userObj);
+                var promise = dataServicesPost.save('createUser',{user:userObj});
                 promise.then(function (data) {
                    console.log(data+"angular createUser call data");
                 }, function (data) {
@@ -145,7 +147,7 @@
 
     // signin  page controller
     appControllers.controller('signinPage',
-        function ($scope, $rootScope, $location) {
+        function ($scope, $rootScope, $location,dataServicesPost) {
             $rootScope.bodyClass = 'inner';
             $rootScope.landing = false;
             $rootScope.page = 'signin';
@@ -180,7 +182,7 @@
                     showError('Password is required.', $scope);
                     return false;
                 }
-                if ($scope.user.email === 'homeowner@enerwise.io' && $scope.user.password === 'welcomeH0me') {
+                /*if ($scope.user.email === 'homeowner@enerwise.io' && $scope.user.password === 'welcomeH0me') {
                     // Homeowner page
                     $location.path('homeowner');
                 } else if ($scope.user.email === 'money@enerwise.io' && $scope.user.password === 'cashM0ney') {
@@ -197,8 +199,22 @@
                 else {
                     showError('Email/Password is incorrect.', $scope);
                     return false;
-                }
-
+                }*/
+              //  $scope.user.username=$scope.user.email;
+                var promise = dataServicesPost.query('signin',$scope.user);
+                promise.then(function (data) {
+                    if(data.successFlag==true)
+                    {
+                        console.log(data.user);
+                        loggedInUserObj=data.user;
+                        $location.path('homeowner');
+                    }
+                    else
+                    {
+                        $scope.loginFailureMsg=data.message;
+                    }
+                }, function (data) {
+                });
             };
             $scope.strength = [0, 0, 0, 0, 0];
             $scope.$watch('user.password', function (newValue) {
@@ -318,7 +334,7 @@
 
     // reset  page controller
     appControllers.controller('homeownerPage',
-        function ($scope, $rootScope, dataServices) {
+        function ($scope, $rootScope, dataServices,helperDataServices) {
             $rootScope.bodyClass = 'homeowner';
             $scope.user = { name: "John Smith"};
             $rootScope.page = 'inner';
@@ -342,11 +358,32 @@
             $rootScope.toggleMenu = function () {
                 $rootScope.menu = !$rootScope.menu;
             };
+
+            //getting states
+            var promise = helperDataServices.query('helperdata/states');
+            promise.then(function (data) {
+                console.log(data);
+                $scope.state=data;
+                $scope.resident.state=data[0];
+                //$scope.items = data.admin;
+            }, function (data) {
+            });
+
+            $scope.getCities = function(){
+                //var promise = helperDataServices.query('helperdata/cities/'+$scope.resident.state.value);
+                //promise.then(function (data) {
+                //    console.log(data);
+                //    $scope.city=data;
+                //    $scope.resident.city=data[0];
+                //}, function (data) {
+                //});
+            };
+
             var count = 0;
-            var promise = dataServices.query('electric');
+            promise = dataServices.query('electric');
             promise.then(function (data) {
                 $scope.electric = data.electric;
-                $scope.state = data.state;
+              /*  $scope.state = data.state;*/
                 $scope.houseslist = data.houseslist;
                 $scope.chartData = data.chartData;
             }, function (data) {
@@ -375,6 +412,7 @@
                     showError('Password is required.', $scope);
                     return false;
                 }
+
                 $scope.step = 1;
             };
             $scope.nextStep2 = function () {
@@ -506,6 +544,14 @@
                 $scope.findVendorButton = false;
                 showSuccess("Thank you. We'll be in touch", $scope, 'Thank You');
             };
+
+           var fillUserDetails=function(){
+                $scope.contact.firstname=loggedInUserObj.first_name;
+                $scope.contact.lastname=loggedInUserObj.last_name;
+                $scope.contact.email=loggedInUserObj.email;
+                $scope.contact.password=loggedInUserObj.password;
+            };
+            fillUserDetails();
 
         });
 
