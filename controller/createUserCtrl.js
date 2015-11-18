@@ -31,51 +31,45 @@ fs.readFile('config/welcomemail.html',function(err,content){
 exports.saveUser=function(userObj){
 /*    console.log(userObj);*/
     mailOptions.to=userObj.email;
-//    console.log(mailOptions);
-    var pg = require('pg');
-    var connectionString ='postgres://rdpenjpi:YkKrx4t3SxVm3F54KGYIQ8ASfZ6_uy0g@pellefant.db.elephantsql.com:5432/rdpenjpi';
-    var client = new pg.Client(connectionString);
-    client.connect();
-    var query = client.query('INSERT INTO public.user (first_name,last_name,email,password,role) VALUES (\''+userObj.firstname+'\',\''+userObj.lastname+'\',\''+userObj.email+'\',\''+userObj.password+'\',\''+userObj.type+'\');');
-    query.on('end', function() { client.end(); });
-
-    smtpTransport.sendMail(mailOptions,function(err,response){
-       if(err)
-       {
-           console.log(err);
-       }
-        else
-       {
-           console.log("Message Sent: "+response.message);
-       }
-    });
-
+    User
+        .build({first_name: userObj.firstname, last_name: userObj.lastname,email:userObj.email,password:userObj.password,role:"owner" })
+        .save()
+        .then(function() {
+           console.log("signup successful");
+            // you can now access the currently saved task with the variable anotherTask... nice!
+            smtpTransport.sendMail(mailOptions,function(err,response){
+                if(err)
+                {
+                    console.log(err);
+                }
+                else
+                {
+                    console.log("Message Sent: "+response.message);
+                }
+            });
+        }).catch(function(error) {
+        // Ooops, do some error-handling
+        console.log("error signing up"+error);
+    })
 };
 
-exports.updateUser=function(req,res,next){
-  console.log(req.body.user);
-  /*  User.find({ where: {id: req.body.user.userId} }).success(function(userObj) {
-        if (userObj) { // if the record exists in the db
-        //    userObj.updateAttributes({
-        //        last_name: req.body.user.lastname
-        //    }).success(function(data) {
-        //        console.log(data);
-        //    });
-            console.log("hmm mle to chhe");
-
+exports.updateUser=function(userObj){
+    User.find({
+        where: {
+            id: userObj.userId
         }
-        else{
-            console.log("hmm nthi mltu");
-
+    }).then(function (userTmp) {
+        console.log(userTmp);
+        if (userTmp) {
+            userTmp.updateAttributes({
+                email: userObj.email,
+                password:userObj.password,
+                first_name:userObj.firstname,
+                last_name:userObj.lastname
+            }).then(function (data) {
+                console.log(data);
+            });
         }
-    }).failure(function(err){
-       console.log(err);
-    });*/
-
-    var userObj=req.body.user;
-    var user1=User.build({id:userObj.userId,first_name:'',password:'',last_name:'hmmm',email:'mkataria920@gmail.com',created_at:now(),updatedAt:now()});
-    user1.last_name=userObj.lastname;
-    user1.update(function(err){
-        console.log(err);
     });
+
 };

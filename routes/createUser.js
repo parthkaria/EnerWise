@@ -15,7 +15,8 @@ router.post('/', function(req, res, next) {
 /* Put user Object */
 router.put('/update', function(req, res, next) {
     console.log("inside put create user");
-    createUserCtrl.updateUser(req,res,next);
+    createUserCtrl.updateUser(req.body.user);
+    res.send("user successfully updated");;
 });
 
 module.exports = router;
