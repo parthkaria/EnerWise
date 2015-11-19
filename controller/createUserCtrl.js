@@ -29,10 +29,10 @@ fs.readFile('config/welcomemail.html',function(err,content){
 
 
 exports.saveUser=function(userObj){
-/*    console.log(userObj);*/
+    console.log(userObj);
     mailOptions.to=userObj.email;
     User
-        .build({first_name: userObj.firstname, last_name: userObj.lastname,email:userObj.email,password:userObj.password,role:"owner" })
+        .build({first_name: userObj.firstname, last_name: userObj.lastname,email:userObj.email,password:userObj.password,role:userObj.role })
         .save()
         .then(function() {
            console.log("signup successful");

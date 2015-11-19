@@ -9,6 +9,7 @@ var User = sequelize.define('user', {
     email: Sequelize.STRING,
     password: Sequelize.STRING,
     first_name: Sequelize.STRING,
+    role:Sequelize.STRING,
     last_name: Sequelize.STRING,
     createdAt: {
         field         : 'created_at',
