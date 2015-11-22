@@ -16,10 +16,7 @@ var Houses = sequelize.define('houses', {
     city: Sequelize.STRING,
     state: Sequelize.STRING,
     zip: Sequelize.STRING,
-    status: {
-        type:   Sequelize.ENUM,
-        values: ['pending', 'completed']
-    },
+    status: Sequelize.STRING,
     createdAt: {
         field         : 'created_at',
         type          : Sequelize.DATE

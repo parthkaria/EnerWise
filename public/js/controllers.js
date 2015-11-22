@@ -466,7 +466,14 @@
                     showError('# of Children is required.', $scope);
                     return false;
                 }
-                $scope.step = 3;
+
+                var promise = dataServicesPost.save('createhome',{homeinfo:$scope.resident});
+                promise.then(function (data) {
+                    console.log(data);
+                    $scope.step = 3;
+                    //$scope.items = data.admin;
+                }, function (data) {
+                });
             };
 
             $scope.backStep2 = function () {

@@ -7,12 +7,12 @@ var User=require('../models/user');
 
 module.exports = function(passport) {
     passport.serializeUser(function(user,done){
-        done(null,user.id);
+        done(null,user);
     });
 
-    passport.deserializeUser(function(id,done){
+    passport.deserializeUser(function(user,done){
         //query database for entire userobj based on id
-        done(null,{id:id,password:id});
+        done(null,user);
     });
 
     passport.use(new passportLocal.Strategy(

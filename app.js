@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//var cookieSession = require('cookie-session');
 var passport = require('passport');
 var routes = require('./routes/index');
 //var flash = require('req-flash');
@@ -22,16 +23,23 @@ var expressSession=require('express-session');
 app.use(express.static(__dirname + '/views'));
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(flash());
 
-app.use(expressSession({
+app.use(cookieParser());
+app.use(bodyParser());
+
+/*app.use(expressSession({
   secret:process.env.SESSION_SECRET || 'secret',
   resave:false,
   saveUninitialized:false
+}));*/
+
+app.use(expressSession({
+  secret:process.env.SESSION_SECRET || 'secret'
 }));
 // passport initialization
 app.use(passport.initialize());
@@ -51,6 +59,15 @@ app.use('/', routes);
 app.use('/createUser',require('./routes/createUser'));
 app.use('/signin',require('./routes/login'));
 app.use('/helperdata',require('./routes/helperdata'));
+app.use('/createHome',require('./routes/home'));
+
+/*function isLoggedIn(req,res,next){
+  if(req.isAuthenticated())
+  {
+    return next();
+  }
+  res.redirect('/');
+}*/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

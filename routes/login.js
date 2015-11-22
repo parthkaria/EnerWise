@@ -16,14 +16,6 @@ router.post('/',
             }
             else
             {
-               /* UserHouse.findAll({
-                    where: {
-                        user_id: user
-                    }
-                }).then(function (house) {
-                    console.log(house.length());
-                });*/
-
                 var info= {};
                 info.successFlag=true;
                 info.user=user[0];
