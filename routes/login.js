@@ -8,7 +8,7 @@ var UserHouse=require('../models/user_house');
 
 router.post('/',
     function(req, res, next) {
-        passport.authenticate('local',function(err,user,info){
+        passport.authenticate('local',{session:true},function(err,user,info){
             console.log(info);
             if(!user) {
                 info.successFlag=false;
@@ -16,6 +16,10 @@ router.post('/',
             }
             else
             {
+                req.logIn(user, function (err) {
+                    console.log("error in req login");
+                });
+                console.log(req.isAuthenticated());
                 var info= {};
                 info.successFlag=true;
                 info.user=user[0];

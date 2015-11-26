@@ -20,7 +20,8 @@ var expressSession=require('express-session');
 // view engine setup
 /*app.set('views', path.join(__dirname, 'views'));
  app.set('view engine', 'ejs');*/
-app.use(express.static(__dirname + '/views'));
+
+require('./config/passport')(passport);
 
 app.use(logger('dev'));
 //app.use(bodyParser.json());
@@ -28,7 +29,7 @@ app.use(logger('dev'));
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(flash());
-
+app.use(express.static(__dirname + '/views'));
 app.use(cookieParser());
 app.use(bodyParser());
 
@@ -39,13 +40,11 @@ app.use(bodyParser());
 }));*/
 
 app.use(expressSession({
-  secret:process.env.SESSION_SECRET || 'secret'
+  secret:'secret'
 }));
 // passport initialization
 app.use(passport.initialize());
 app.use(passport.session());
-
-require('./config/passport')(passport);
 
 // Sequelize
 /*var Sequelize = require('sequelize');
